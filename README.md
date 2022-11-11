@@ -1,8 +1,13 @@
 # simplepygamemenus
 
 *A package for making simple menus for your python games!*
+- By Leonardo Ferrisi
 
-##### By Leonardo Ferrisi
+# Installation
+
+Install using
+
+`pip install simplepygamemenus`
 
 ----------------------------
 
@@ -39,7 +44,11 @@ Add buttons using:
 
 I'll add more soon, see the example below!
 
-- Leonardo 
+- Leonardo
+
+### Extra Info:
+
+- PyPI Page: https://pypi.org/project/simplepygamemenus/0.1.0/
 
 
 
