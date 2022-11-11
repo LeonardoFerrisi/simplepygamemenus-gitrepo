@@ -1,8 +1,11 @@
-recursive-include doc *.css
-recursive-include doc *.html
-recursive-include doc *.js
-recursive-include doc *.png
-recursive-include doc *.ttf
+include \
+    assets/rect.png \
+    assets/font.ttf \
+    simplepygamemenus/assets/rect.png \
+    simplepygamemenus/assets/font.ttf
 
-recursive-include src/matlabsources *.m
-recursive-include src/matlabsources *.slx
+global-includes *png
+global-includes *ttf
+
+recursive-include *.png
+recursive-include *.ttf
