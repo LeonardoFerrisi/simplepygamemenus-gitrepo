@@ -56,7 +56,7 @@ class Menu:
     A constructor for menus
     """
     
-    def __init__(self, caption="A Simple Pygame Menu", title="MENU", world:pygame.Surface=None, background=None, displaytitle=True, main=None, showESCKEYhint=True):
+    def __init__(self, caption="A Simple Pygame Menu", title="MENU", x=500, y=500,world=None, background=None, displaytitle=True, main=None, useDisplayScreen=True, showESCKEYhint=True):
         """
         Parameters:
             caption            (str):
@@ -66,26 +66,36 @@ class Menu:
             displaytitle      (bool): Display the title?
             main              (Menu): Add a main menu to return to with escape
         """
-        self.caption         = caption
-        self.title           = title
-        self.buttons         = []
-        self.text_to_display = []
-        
-        if world is not None:
-            self.SCREEN = world
-            self.load_win_dimensions(world.get_width(),world.get_height())
-        else:
-            self.load_win_dimensions(500,500)
-            if background is not None: background_path = os.path.join(DIRNAME, background)
-            else: background_path=None
-            self.prepSCREEN(background_filepath=background_path)
-        self.add_text(text=self.title, x=self.center_win_width, y=80, size=30, color=(255,255,255))
+        self.caption          = caption
+        self.title            = title
+        self.buttons          = []
+        self.text_to_display  = []
+        self.background       = None
+        self.background_color = "black"
+        self.main             = main
 
-        if main is not None:
+        if main is not None and useDisplayScreen:
             if not isinstance(main, self.__class__): raise ValueError("Main Menu must be instance of Menu object")
-            self.main = main
+            self.load_win_dimensions(self.main.SCREEN.get_width(),self.main.SCREEN.get_height())
+            if background is not None: background_path = os.path.join(DIRNAME, background)
+            else: background_path = None
+            self.prepSCREEN(screen=self.main.SCREEN, background_filepath=background_path)
             if showESCKEYhint: self.add_text(text="Press ESC to return to the previous menu", x=self.center_win_width, y=10, size=10, color=(255,255,255))
-        else: self.main = None
+        else:
+            if world is not None:
+                if not isinstance(world, pygame.Surface): raise ValueError("world must be a pygame.Surface object")
+                self.load_win_dimensions(world.get_width(),world.get_height())
+                if background is not None: background_path = os.path.join(DIRNAME, background)
+                else: background_path = None
+                self.prepSCREEN(screen=world, background_filepath=background_path)
+            else:
+                print("loading non world params")
+                self.load_win_dimensions(x,y)
+                if background is not None: background_path = os.path.join(DIRNAME, background)
+                else: background_path=None
+                self.prepSCREEN(screen=None, background_filepath=background_path)
+        
+        self.add_text(text=self.title, x=self.center_win_width, y=80, size=30, color=(255,255,255))
                 
     def load_win_dimensions(self, x, y):
         """
@@ -113,13 +123,17 @@ class Menu:
         display = (text, (x,y), size, color)
         self.text_to_display.append(display)
     
-    def prepSCREEN(self, background_filepath=None):
+    def prepSCREEN(self, screen=None, background_filepath=None):
         """
         Runs the portfolio
         """
         pygame.init()
-        self.SCREEN = pygame.display.set_mode((self.win_width, self.win_height))
+        if screen is None: self.SCREEN = pygame.display.set_mode((self.win_width, self.win_height))
+        else: self.SCREEN = screen
         self.background = pygame.image.load(os.path.join(DIRNAME, background_filepath)) if background_filepath is not None else None  
+
+    def set_background_color(self, color):
+        self.background_color = color
 
     def run_menu(self):
         """
@@ -131,7 +145,7 @@ class Menu:
         
         while True:
             pygame.display.set_caption(self.caption)
-            self.render_background()
+            self.render_background(self.background_color)
             self.render_display_texts()
 
             MOUSEPOS = pygame.mouse.get_pos()
@@ -159,12 +173,12 @@ class Menu:
             pygame.display.update() # ESSENTIAL FOR CHANING MENUS!
 
 
-    def render_background(self):
+    def render_background(self, color="black"):
         if self.background is not None:
-            self.SCREEN.fill("black")
+            self.SCREEN.fill(color)
             self.SCREEN.blit(self.background, self.background_coords)
         else:
-            self.SCREEN.fill("black")
+            self.SCREEN.fill(color)
 
     def render_buttons(self, MOUSEPOS=None):
         if MOUSEPOS is None: raise ValueError("MOUSEPOS cannot be None")
@@ -216,17 +230,46 @@ class Menu:
 
 if __name__ == "__main__":
 
-    main = Menu()
-    main.add_text(text="SIMPLE PYGAME MENUS", x=250, y=30, size=25)
+
+# DEFAULT: UNCOMMENT TO TRY OUT!
+
+    # USING ANOTHER DISPLAY OBJECT (your main one perhaps?)
+
+    mywin = pygame.display.set_mode((1000, 700))
+
+    main = Menu(world=mywin)
+    main.add_text(text="SIMPLE PYGAME MENUS", x=500, y=30, size=25)
     b_menu = Menu(main=main, title="other menu", showESCKEYhint=True)
-    main.add_button(label="WHATS THIS?", x=250, y=250, fontsize=30, function=b_menu.run_menu)
-    b_menu.add_button(label="exit", x=250, y=250, fontsize=30, function=sys.exit)
+    main.add_button(label="WHATS THIS?", x=500, y=250, fontsize=30, function=b_menu.run_menu)
+    b_menu.add_button(label="exit", x=500, y=250, fontsize=30, function=sys.exit)
 
     next_menu = Menu(title="NEXT",main=b_menu)
-    b_menu.add_button(label="next menu", x=250, y=400, fontsize=30, basecolor=(0,255,0), hovercolor=(255,255,255), function=next_menu.run_menu)
+    b_menu.add_button(label="next menu", x=500, y=400, fontsize=30, basecolor=(0,255,0), hovercolor=(255,255,255), function=next_menu.run_menu)
 
     
     main.run_menu()
+
+
+# NON DEFAULT: UNCOMMENT TO TRY OUT!
+
+    # USING DEFAULT or DEFINED local display
+
+        # Notice that no display has been defined above, the display use is the one from the main menu
+
+    # main = Menu(x=800, y=800)
+    # main.add_text(text="SIMPLE PYGAME MENUS", x=400, y=30, size=25)
+    # b_menu = Menu(main=main, title="other menu", showESCKEYhint=True)
+    # main.add_button(label="WHATS THIS?", x=400, y=250, fontsize=30, function=b_menu.run_menu)
+    # b_menu.add_button(label="exit", x=400, y=250, fontsize=30, function=sys.exit)
+
+    # next_menu = Menu(title="NEXT",main=b_menu)
+    # b_menu.add_button(label="next menu", x=400, y=400, fontsize=30, basecolor=(0,255,0), hovercolor=(255,255,255), function=next_menu.run_menu)
+
+    
+    # main.run_menu()
+
+
+
 
     
 

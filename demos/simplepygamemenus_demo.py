@@ -1,6 +1,8 @@
 import sys
 from simplepygamemenus.menu import Menu
+import pygame
 
+# d = pygame.Surface(size=(1000,800))
 main = Menu()
 main.add_text(text="SIMPLE PYGAME MENUS", x=250, y=30, size=25)
 b_menu = Menu(main=main, title="other menu", showESCKEYhint=True)
