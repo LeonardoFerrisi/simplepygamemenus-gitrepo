@@ -1,8 +1,13 @@
 # simplepygamemenus
 
 *A package for making simple menus for your python games!*
+- By Leonardo Ferrisi
 
-##### By Leonardo Ferrisi
+# Installation
+
+Install using
+
+`pip install simplepygamemenus`
 
 ----------------------------
 
