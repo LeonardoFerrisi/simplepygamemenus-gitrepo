@@ -19,7 +19,7 @@ DIRNAME = os.path.dirname(__file__)
 
 def get_font(size, font_path=None): # Returns Press-Start-2P in the desired size
     if font_path is not None: return pygame.font.Font(os.path.join(DIRNAME, font_path), size)
-    else: return pygame.font.Font(os.path.join(DIRNAME, "font.ttf"), size)
+    else: return pygame.font.Font(os.path.join(DIRNAME, "assets//font.ttf"), size)
 
 class Button():
 	def __init__(self, image, pos, text_input, font, base_color, hovering_color):
@@ -102,7 +102,7 @@ class Menu:
     def add_button(self, label="button", function=None, x=0, y=0, font=None, fontsize=30, basecolor=(0,0,255), hovercolor=(255,255,0)):
         if function is None: function = self.default_func
         if font is None: font = get_font(fontsize)
-        img = pygame.image.load(os.path.join(DIRNAME, "rect.png"))
+        img = pygame.image.load(os.path.join(DIRNAME, "assets//rect.png"))
         b = Button(image=img, pos=(x,y), text_input=label, font=font, base_color=basecolor, hovering_color=hovercolor)
         self.buttons.append((b, function))
 

@@ -6,11 +6,13 @@ with open("README.md", "r") as fh:
   
 setuptools.setup(
     name="simplepygamemenus",
-    version="0.0.6",
+    version="0.0.9.1",
     author="Leonardo Ferrisi",
     author_email="ferrisil@union.edu",
+    package_dir={'simplepygamemenus': 'simplepygamemenus'},
     packages=find_packages(),
-    package_data={'simplepygamemenus': ['rect.png', 'font.ttf', 'menu.py']},
+    package_data={'simplepygamemenus': ['assets/rect.png', 'assets/font.ttf', 'menu.py']},
+    data_files=[('simplepygamemenus/assets', ['rect.png', 'font.ttf'])],
     include_package_data=True,
     description="A package for making simple menus for your python games!",
     long_description=description,
