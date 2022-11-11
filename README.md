@@ -6,7 +6,13 @@
 
 ----------------------------
 
-Features:
+### Demo / Example:
+
+See our [Demo File](demos/simplepygamemenus_demo.py)
+
+------------------------------------------------
+
+## Features:
 
 - Make simple pygame menus
 
@@ -32,6 +38,8 @@ Add buttons using:
        myMenu.add_button(label='button text', x, y, fontsize, function=myOtherMenu.run_main)
 
 I'll add more soon, see the example below!
+
+- Leonardo 
 
 
 

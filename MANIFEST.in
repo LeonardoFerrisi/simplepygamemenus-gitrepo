@@ -1,11 +1,4 @@
-include \
-    assets/rect.png \
-    assets/font.ttf \
-    simplepygamemenus/assets/rect.png \
-    simplepygamemenus/assets/font.ttf
-
-global-includes *png
-global-includes *ttf
-
-recursive-include *.png
-recursive-include *.ttf
+include README.md
+include .gitignore
+include src/simplepygamemenus/rect.png
+include src/simplepygamemenus/font.ttf

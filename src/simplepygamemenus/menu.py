@@ -19,7 +19,7 @@ DIRNAME = os.path.dirname(__file__)
 
 def get_font(size, font_path=None): # Returns Press-Start-2P in the desired size
     if font_path is not None: return pygame.font.Font(os.path.join(DIRNAME, font_path), size)
-    else: return pygame.font.Font(os.path.join(DIRNAME, "assets//font.ttf"), size)
+    else: return pygame.font.Font(os.path.join(DIRNAME, "font.ttf"), size)
 
 class Button():
 	def __init__(self, image, pos, text_input, font, base_color, hovering_color):
@@ -102,7 +102,7 @@ class Menu:
     def add_button(self, label="button", function=None, x=0, y=0, font=None, fontsize=30, basecolor=(0,0,255), hovercolor=(255,255,0)):
         if function is None: function = self.default_func
         if font is None: font = get_font(fontsize)
-        img = pygame.image.load(os.path.join(DIRNAME, "assets//rect.png"))
+        img = pygame.image.load(os.path.join(DIRNAME, "rect.png"))
         b = Button(image=img, pos=(x,y), text_input=label, font=font, base_color=basecolor, hovering_color=hovercolor)
         self.buttons.append((b, function))
 
@@ -217,9 +217,9 @@ class Menu:
 if __name__ == "__main__":
 
     main = Menu()
-    main.add_text(text="TEST", x=250, y=20, size=30)
+    main.add_text(text="SIMPLE PYGAME MENUS", x=250, y=30, size=25)
     b_menu = Menu(main=main, title="other menu", showESCKEYhint=True)
-    main.add_button(label="Fortnite", x=250, y=250, fontsize=30, function=b_menu.run_menu)
+    main.add_button(label="WHATS THIS?", x=250, y=250, fontsize=30, function=b_menu.run_menu)
     b_menu.add_button(label="exit", x=250, y=250, fontsize=30, function=sys.exit)
 
     next_menu = Menu(title="NEXT",main=b_menu)
