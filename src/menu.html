@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module menu</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>menu</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cleofe%5C2023_csc%5Csimplepygamemenus-gitrepo%5Csrc%5Csimplepygamemenus%5Cmenu.py">c:\users\leofe\2023_csc\simplepygamemenus-gitrepo\src\simplepygamemenus\menu.py</a></font></td></tr></table>
+    <p><tt>SIMPLE&nbsp;PYGAME&nbsp;MENU&nbsp;-&nbsp;Leonardo&nbsp;Ferrisi&nbsp;23'&nbsp;<br>
+&nbsp;<br>
+contact:&nbsp;ferrisil@union.edu<br>
+&nbsp;<br>
+A&nbsp;python&nbsp;package&nbsp;for&nbsp;simplifying&nbsp;the&nbsp;process&nbsp;of&nbsp;importing&nbsp;your&nbsp;pygame&nbsp;menus<br>
+&nbsp;<br>
+Some&nbsp;Rules:<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Make&nbsp;the&nbsp;main&nbsp;menu&nbsp;first!<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;If&nbsp;you&nbsp;want&nbsp;to&nbsp;be&nbsp;able&nbsp;to&nbsp;switch&nbsp;back&nbsp;to&nbsp;the&nbsp;previous&nbsp;menu,&nbsp;set&nbsp;the&nbsp;main&nbsp;parameter&nbsp;in&nbsp;<a href="#Menu">Menu</a>()&nbsp;to&nbsp;the&nbsp;previous&nbsp;menu</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="os.html">os</a><br>
+</td><td width="25%" valign=top><a href="pygame.html">pygame</a><br>
+</td><td width="25%" valign=top><a href="sys.html">sys</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="menu.html#Button">Button</a>
+</font></dt><dt><font face="helvetica, arial"><a href="menu.html#Menu">Menu</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Button">class <strong>Button</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Button">Button</a>(image:&nbsp;pygame.Surface,&nbsp;pos:&nbsp;tuple,&nbsp;text_input:&nbsp;str,&nbsp;font:&nbsp;pygame.font.Font,&nbsp;base_color:&nbsp;tuple,&nbsp;hovering_color:&nbsp;tuple)<br>
+&nbsp;<br>
+A&nbsp;button&nbsp;you&nbsp;can&nbsp;click&nbsp;on&nbsp;and&nbsp;execute&nbsp;functions&nbsp;with<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Button-__init__"><strong>__init__</strong></a>(self, image: pygame.Surface, pos: tuple, text_input: str, font: pygame.font.Font, base_color: tuple, hovering_color: tuple)</dt><dd><tt>Create&nbsp;a&nbsp;<a href="#Button">Button</a>&nbsp;<a href="builtins.html#object">object</a><br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Parameters:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`image`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(pygame.Surface):&nbsp;An&nbsp;image&nbsp;to&nbsp;overlay&nbsp;the&nbsp;text&nbsp;on.&nbsp;Example:&nbsp;a&nbsp;rectangle<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`pos`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(tuple):&nbsp;A&nbsp;tuple&nbsp;containing&nbsp;the&nbsp;x,&nbsp;y&nbsp;position&nbsp;of&nbsp;the&nbsp;button&nbsp;center<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`text_input`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(str):&nbsp;The&nbsp;text&nbsp;that&nbsp;goes&nbsp;on&nbsp;the&nbsp;button<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`font`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(pygame.font.Font):&nbsp;The&nbsp;font&nbsp;of&nbsp;the&nbsp;text.&nbsp;Use&nbsp;`get_font`&nbsp;for&nbsp;best&nbsp;functionality<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`base_color`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(str):&nbsp;The&nbsp;base&nbsp;color&nbsp;of&nbsp;button&nbsp;when&nbsp;not&nbsp;being&nbsp;interacted&nbsp;with<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`hovering_color`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(str):&nbsp;The&nbsp;hovering&nbsp;color&nbsp;of&nbsp;button&nbsp;when&nbsp;being&nbsp;interacted&nbsp;with</tt></dd></dl>
+
+<dl><dt><a name="Button-changeColor"><strong>changeColor</strong></a>(self, position: tuple) -&gt; None</dt><dd><tt>Given&nbsp;an&nbsp;(x,y)&nbsp;position,&nbsp;typically&nbsp;provided&nbsp;by&nbsp;`pygame.mouse.get_pos()`<br>
+tell&nbsp;us&nbsp;if&nbsp;the&nbsp;mouse&nbsp;is&nbsp;above&nbsp;the&nbsp;button&nbsp;and&nbsp;change&nbsp;color&nbsp;accordingly<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Parameters:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`position`&nbsp;(tuple):&nbsp;The&nbsp;x,&nbsp;y&nbsp;position&nbsp;provided&nbsp;by&nbsp;`pygame.mouse.get_pos()`</tt></dd></dl>
+
+<dl><dt><a name="Button-checkForInput"><strong>checkForInput</strong></a>(self, position: tuple) -&gt; bool</dt><dd><tt>Given&nbsp;an&nbsp;(x,y)&nbsp;position,&nbsp;typically&nbsp;provided&nbsp;by&nbsp;`pygame.mouse.get_pos()`<br>
+tell&nbsp;us&nbsp;if&nbsp;the&nbsp;mouse&nbsp;is&nbsp;interacting&nbsp;with&nbsp;button<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Parameters:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`position`&nbsp;(tuple):&nbsp;The&nbsp;x,&nbsp;y&nbsp;position&nbsp;provided&nbsp;by&nbsp;`pygame.mouse.get_pos()`</tt></dd></dl>
+
+<dl><dt><a name="Button-update"><strong>update</strong></a>(self, screen: pygame.Surface) -&gt; None</dt><dd><tt>Updated&nbsp;the&nbsp;<a href="#Button">Button</a>&nbsp;state<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Paramters:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`screen`&nbsp;(pygame.Surface):&nbsp;The&nbsp;pygame&nbsp;surface&nbsp;<a href="builtins.html#object">object</a>&nbsp;that&nbsp;we&nbsp;are&nbsp;composing&nbsp;the&nbsp;button&nbsp;onto</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Menu">class <strong>Menu</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Menu">Menu</a>(caption='A&nbsp;Simple&nbsp;Pygame&nbsp;<a href="#Menu">Menu</a>',&nbsp;title='MENU',&nbsp;x=500,&nbsp;y=500,&nbsp;world=None,&nbsp;background=None,&nbsp;displaytitle=True,&nbsp;main=None,&nbsp;useDisplayScreen=True,&nbsp;showESCKEYhint=True)<br>
+&nbsp;<br>
+A&nbsp;constructor&nbsp;for&nbsp;menus<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Menu-__init__"><strong>__init__</strong></a>(self, caption='A Simple Pygame Menu', title='MENU', x=500, y=500, world=None, background=None, displaytitle=True, main=None, useDisplayScreen=True, showESCKEYhint=True)</dt><dd><tt>Creates&nbsp;a&nbsp;<a href="#Menu">Menu</a>&nbsp;<a href="builtins.html#object">object</a><br>
+&nbsp;<br>
+Parameters:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;`caption`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(str):&nbsp;The&nbsp;window&nbsp;caption&nbsp;of&nbsp;your&nbsp;menu<br>
+&nbsp;&nbsp;&nbsp;&nbsp;`title`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(str):&nbsp;The&nbsp;title&nbsp;of&nbsp;your&nbsp;menu,&nbsp;is&nbsp;by&nbsp;default&nbsp;shown&nbsp;at&nbsp;the&nbsp;top&nbsp;of&nbsp;your&nbsp;menu,&nbsp;can&nbsp;be&nbsp;hidden&nbsp;by&nbsp;setting&nbsp;'displayTitle'&nbsp;to&nbsp;False<br>
+&nbsp;&nbsp;&nbsp;&nbsp;`x`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(int):&nbsp;The&nbsp;width&nbsp;of&nbsp;your&nbsp;menu,&nbsp;leave&nbsp;blank&nbsp;if&nbsp;using&nbsp;a&nbsp;pygame.Surface&nbsp;<a href="builtins.html#object">object</a>&nbsp;or&nbsp;using&nbsp;another&nbsp;menu&nbsp;as&nbsp;main<br>
+&nbsp;&nbsp;&nbsp;&nbsp;`y`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(int):&nbsp;The&nbsp;width&nbsp;of&nbsp;your&nbsp;menu,&nbsp;leave&nbsp;blank&nbsp;if&nbsp;using&nbsp;a&nbsp;pygame.Surface&nbsp;<a href="builtins.html#object">object</a>&nbsp;or&nbsp;using&nbsp;another&nbsp;menu&nbsp;as&nbsp;main<br>
+&nbsp;&nbsp;&nbsp;&nbsp;`world`&nbsp;&nbsp;&nbsp;(pygame.Surface):&nbsp;A&nbsp;pygame&nbsp;surface&nbsp;<a href="builtins.html#object">object</a>&nbsp;you&nbsp;can&nbsp;use&nbsp;as&nbsp;the&nbsp;base&nbsp;python&nbsp;screen.&nbsp;An&nbsp;alternative&nbsp;to&nbsp;using&nbsp;x,&nbsp;y&nbsp;for&nbsp;dimensions.&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Useful&nbsp;for&nbsp;having&nbsp;all&nbsp;menus&nbsp;use&nbsp;the&nbsp;same&nbsp;display<br>
+&nbsp;&nbsp;&nbsp;&nbsp;`background`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(str):&nbsp;The&nbsp;local&nbsp;path&nbsp;to&nbsp;a&nbsp;background&nbsp;file<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;you&nbsp;have&nbsp;an&nbsp;image&nbsp;you&nbsp;want&nbsp;to&nbsp;use&nbsp;as&nbsp;a&nbsp;background,&nbsp;provide&nbsp;the&nbsp;**FULL**&nbsp;filepath&nbsp;to&nbsp;the&nbsp;image&nbsp;here.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;`displaytitle`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(bool):&nbsp;A&nbsp;boolean&nbsp;to&nbsp;hide&nbsp;or&nbsp;show&nbsp;the&nbsp;title&nbsp;on&nbsp;your&nbsp;menu<br>
+&nbsp;&nbsp;&nbsp;&nbsp;`main`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<a href="#Menu">Menu</a>):&nbsp;Add&nbsp;a&nbsp;main&nbsp;menu&nbsp;to&nbsp;return&nbsp;to&nbsp;with&nbsp;ESC.&nbsp;Pass&nbsp;in&nbsp;another&nbsp;menu&nbsp;<a href="builtins.html#object">object</a>&nbsp;to&nbsp;be&nbsp;able&nbsp;to&nbsp;return&nbsp;to&nbsp;it&nbsp;by&nbsp;clicking&nbsp;ESC<br>
+&nbsp;&nbsp;&nbsp;&nbsp;`useDisplaySceen`&nbsp;&nbsp;&nbsp;(bool):&nbsp;In&nbsp;the&nbsp;event&nbsp;you&nbsp;do&nbsp;not&nbsp;want&nbsp;to&nbsp;use&nbsp;the&nbsp;display&nbsp;screen&nbsp;passed&nbsp;in&nbsp;by&nbsp;`world`&nbsp;or&nbsp;`main`,&nbsp;set&nbsp;this&nbsp;to&nbsp;False.&nbsp;Default&nbsp;is&nbsp;True<br>
+&nbsp;&nbsp;&nbsp;&nbsp;`showESCKEYhint`&nbsp;&nbsp;&nbsp;&nbsp;(bool):&nbsp;True&nbsp;if&nbsp;you&nbsp;wish&nbsp;to&nbsp;show&nbsp;a&nbsp;hint&nbsp;at&nbsp;the&nbsp;top&nbsp;of&nbsp;all&nbsp;menus&nbsp;that&nbsp;have&nbsp;a&nbsp;`main`&nbsp;parameter&nbsp;that&nbsp;is&nbsp;not&nbsp;None.&nbsp;Else&nbsp;set&nbsp;to&nbsp;False.</tt></dd></dl>
+
+<dl><dt><a name="Menu-add_button"><strong>add_button</strong></a>(self, label: str = 'button', function: &lt;built-in function callable&gt; = None, x: int = 0, y: int = 0, font: str = None, fontsize: int = 30, basecolor: tuple = (0, 0, 255), hovercolor: tuple = (255, 255, 0)) -&gt; None</dt><dd><tt>Add&nbsp;a&nbsp;button&nbsp;<a href="builtins.html#object">object</a>&nbsp;to&nbsp;internal&nbsp;button&nbsp;storage.<br>
+When&nbsp;<a href="#Menu">Menu</a>&nbsp;is&nbsp;run&nbsp;using&nbsp;`&lt;menu&nbsp;name&gt;.<a href="#Menu-run_menu">run_menu</a>()`,&nbsp;all&nbsp;buttons&nbsp;added&nbsp;with&nbsp;this&nbsp;method&nbsp;are&nbsp;rendered.<br>
+&nbsp;<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Parameters:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`label`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(str):&nbsp;Text&nbsp;to&nbsp;display&nbsp;on&nbsp;the&nbsp;button<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`function`&nbsp;&nbsp;(callable):&nbsp;A&nbsp;callable&nbsp;function&nbsp;for&nbsp;the&nbsp;button&nbsp;to&nbsp;execute<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NOTE&nbsp;:&nbsp;functions&nbsp;passed&nbsp;in&nbsp;must&nbsp;not&nbsp;be&nbsp;called&nbsp;when&nbsp;being&nbsp;passed.&nbsp;Do&nbsp;not&nbsp;use&nbsp;`()`&nbsp;when&nbsp;passing&nbsp;function&nbsp;in.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Proper&nbsp;Usage&nbsp;Example:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`def&nbsp;callable_method():`<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`do&nbsp;something`<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`menu.<a href="#Menu-add_button">add_button</a>(...&nbsp;,&nbsp;...&nbsp;,&nbsp;function&nbsp;=&nbsp;callable_method&nbsp;,&nbsp;...&nbsp;)`&nbsp;<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`x`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(int):&nbsp;The&nbsp;x&nbsp;coordinate&nbsp;of&nbsp;the&nbsp;button&nbsp;center<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`y`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(int):&nbsp;The&nbsp;y&nbsp;coordinate&nbsp;of&nbsp;the&nbsp;button&nbsp;center<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`font`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(str):&nbsp;The&nbsp;filepath&nbsp;to&nbsp;a&nbsp;font&nbsp;ttf&nbsp;file&nbsp;if&nbsp;applicable.&nbsp;Leave&nbsp;as&nbsp;None&nbsp;to&nbsp;use&nbsp;default&nbsp;font<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`fontsize`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(int):&nbsp;The&nbsp;size&nbsp;of&nbsp;the&nbsp;label&nbsp;font<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`basecolor`&nbsp;&nbsp;&nbsp;&nbsp;(tuple):&nbsp;RGB&nbsp;tuple&nbsp;representing&nbsp;the&nbsp;button&nbsp;color&nbsp;when&nbsp;mouse&nbsp;IS&nbsp;NOT&nbsp;hovering&nbsp;over&nbsp;it<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`hovercolor`&nbsp;&nbsp;&nbsp;(tuple):&nbsp;RGB&nbsp;tuple&nbsp;representing&nbsp;the&nbsp;button&nbsp;color&nbsp;when&nbsp;mouse&nbsp;IS&nbsp;hovering&nbsp;over&nbsp;it</tt></dd></dl>
+
+<dl><dt><a name="Menu-add_text"><strong>add_text</strong></a>(self, text: str = 'default', x: int = 0, y: int = 0, size: int = 45, color: str = '#b68f40') -&gt; None</dt><dd><tt>Add&nbsp;text&nbsp;to&nbsp;render&nbsp;for&nbsp;the&nbsp;menu<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Parameters:&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`text`&nbsp;&nbsp;&nbsp;(str):&nbsp;The&nbsp;text&nbsp;to&nbsp;add<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`x`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(int):&nbsp;The&nbsp;x&nbsp;coordinates&nbsp;for&nbsp;text&nbsp;center<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`y`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(int):&nbsp;The&nbsp;y&nbsp;coordinates&nbsp;for&nbsp;text&nbsp;center<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`size`&nbsp;&nbsp;&nbsp;(int):&nbsp;The&nbsp;size&nbsp;of&nbsp;the&nbsp;text<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`color`&nbsp;&nbsp;(str):&nbsp;A&nbsp;string&nbsp;representing&nbsp;color&nbsp;values&nbsp;in&nbsp;hexadecimal</tt></dd></dl>
+
+<dl><dt><a name="Menu-default_func"><strong>default_func</strong></a>(self) -&gt; None</dt><dd><tt>Useless&nbsp;placeholder&nbsp;to&nbsp;demonstrate&nbsp;a&nbsp;thing&nbsp;a&nbsp;button&nbsp;can&nbsp;do.</tt></dd></dl>
+
+<dl><dt><a name="Menu-display_text"><strong>display_text</strong></a>(self, text='', size=45, color='#b68f40', pos=(0, 0), custom_font=None, line_spacing=10)</dt><dd><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Displays&nbsp;the&nbsp;text&nbsp;on&nbsp;the&nbsp;<a href="#Menu">Menu</a><br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameters:<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`text`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(str):&nbsp;The&nbsp;text&nbsp;to&nbsp;display<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`size`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(int):&nbsp;The&nbsp;size&nbsp;of&nbsp;the&nbsp;text.&nbsp;Default&nbsp;is&nbsp;45<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`color`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(str):&nbsp;Color&nbsp;of&nbsp;the&nbsp;text&nbsp;as&nbsp;a&nbsp;hexadecimal&nbsp;code.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`pos`&nbsp;&nbsp;(tuple[int,&nbsp;int]):&nbsp;The&nbsp;position&nbsp;of&nbsp;the&nbsp;text&nbsp;in&nbsp;x,y&nbsp;format<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`custom_font`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(str):&nbsp;Custom&nbsp;font&nbsp;(.ttf)&nbsp;filepath.&nbsp;Default&nbsp;is&nbsp;None<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`line_spaceing`&nbsp;&nbsp;&nbsp;&nbsp;(int):&nbsp;The&nbsp;spacing&nbsp;for&nbsp;text&nbsp;that&nbsp;uses&nbsp;`<br>
+`&nbsp;characters</tt></dd></dl>
+
+<dl><dt><a name="Menu-gen_text"><strong>gen_text</strong></a>(self, text: str = '', size: str = 45, color: str = '#b68f40', pos: tuple = (0, 0), custom_font: str = None) -&gt; None</dt><dd><tt>Generates&nbsp;text&nbsp;to&nbsp;display<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Parameters:<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`text`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(str):&nbsp;The&nbsp;text&nbsp;to&nbsp;display<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`size`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(int):&nbsp;The&nbsp;size&nbsp;of&nbsp;the&nbsp;text.&nbsp;Default&nbsp;is&nbsp;45<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`color`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(str):&nbsp;Color&nbsp;of&nbsp;the&nbsp;text&nbsp;as&nbsp;a&nbsp;hexadecimal&nbsp;code.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`pos`&nbsp;&nbsp;(tuple[int,&nbsp;int]):&nbsp;The&nbsp;position&nbsp;of&nbsp;the&nbsp;text&nbsp;in&nbsp;x,y&nbsp;format<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`custom_font`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(str):&nbsp;Custom&nbsp;font&nbsp;(.ttf)&nbsp;filepath.&nbsp;Default&nbsp;is&nbsp;None</tt></dd></dl>
+
+<dl><dt><a name="Menu-load_background_coords"><strong>load_background_coords</strong></a>(self, use_center=True) -&gt; None</dt><dd><tt>Loads&nbsp;the&nbsp;background&nbsp;coordinates<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Parameters:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`use_center`&nbsp;(bool):&nbsp;Default&nbsp;is&nbsp;True.&nbsp;Declares&nbsp;whether&nbsp;to&nbsp;center&nbsp;background&nbsp;or&nbsp;not</tt></dd></dl>
+
+<dl><dt><a name="Menu-load_win_dimensions"><strong>load_win_dimensions</strong></a>(self, x: int, y: int) -&gt; None</dt><dd><tt>Given&nbsp;an&nbsp;x,&nbsp;y&nbsp;input&nbsp;-&nbsp;load&nbsp;them&nbsp;as&nbsp;the&nbsp;instance&nbsp;variables&nbsp;for&nbsp;window&nbsp;height&nbsp;and&nbsp;width<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Parameters:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`x`&nbsp;(int):&nbsp;The&nbsp;width&nbsp;of&nbsp;<a href="#Menu">Menu</a>&nbsp;window<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`y`&nbsp;(int):&nbsp;The&nbsp;height&nbsp;of&nbsp;<a href="#Menu">Menu</a>&nbsp;window</tt></dd></dl>
+
+<dl><dt><a name="Menu-prepSCREEN"><strong>prepSCREEN</strong></a>(self, screen: pygame.Surface = None, background_filepath: str = None) -&gt; None</dt><dd><tt>Initializes&nbsp;pygame&nbsp;and&nbsp;sets&nbsp;the&nbsp;screen&nbsp;and&nbsp;background&nbsp;where&nbsp;applicable<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Parameters:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`screen`&nbsp;(pygame.Surface)&nbsp;&nbsp;:&nbsp;Default&nbsp;is&nbsp;None.&nbsp;Pass&nbsp;in&nbsp;pygame.Surface&nbsp;<a href="builtins.html#object">object</a>&nbsp;instead&nbsp;to&nbsp;use&nbsp;that<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`background_filepath`&nbsp;(str):&nbsp;Default&nbsp;is&nbsp;None.&nbsp;The&nbsp;filepath&nbsp;of&nbsp;an&nbsp;image&nbsp;file&nbsp;to&nbsp;use&nbsp;as&nbsp;a&nbsp;background.</tt></dd></dl>
+
+<dl><dt><a name="Menu-render_background"><strong>render_background</strong></a>(self, color: str = 'black') -&gt; None</dt><dd><tt>Renders&nbsp;the&nbsp;background.&nbsp;If&nbsp;self.<strong>background</strong>&nbsp;is&nbsp;not&nbsp;None,&nbsp;uses&nbsp;that&nbsp;as&nbsp;the&nbsp;background<br>
+otherwise&nbsp;uses&nbsp;a&nbsp;solid&nbsp;color<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Parameters:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`color`&nbsp;(str):&nbsp;Default&nbsp;is&nbsp;'black'.&nbsp;A&nbsp;string&nbsp;representing&nbsp;the&nbsp;color.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example:&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color&nbsp;=&nbsp;"black"</tt></dd></dl>
+
+<dl><dt><a name="Menu-render_buttons"><strong>render_buttons</strong></a>(self, MOUSEPOS: tuple = None) -&gt; None</dt><dd><tt>Renders&nbsp;all&nbsp;added&nbsp;Buttons&nbsp;onto&nbsp;the&nbsp;menu<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`MOUSEPOS`&nbsp;(tuple[int,&nbsp;int]):&nbsp;An&nbsp;x,&nbsp;y&nbsp;pos&nbsp;extracted&nbsp;from&nbsp;pygame.mouse.get_pos</tt></dd></dl>
+
+<dl><dt><a name="Menu-render_display_texts"><strong>render_display_texts</strong></a>(self) -&gt; None</dt><dd><tt>Renders&nbsp;all&nbsp;added&nbsp;Text&nbsp;onto&nbsp;the&nbsp;menu</tt></dd></dl>
+
+<dl><dt><a name="Menu-run_menu"><strong>run_menu</strong></a>(self) -&gt; None</dt><dd><tt>Runs&nbsp;the&nbsp;menu&nbsp;as&nbsp;a&nbsp;loop</tt></dd></dl>
+
+<dl><dt><a name="Menu-set_background_color"><strong>set_background_color</strong></a>(self, color: str = None) -&gt; None</dt><dd><tt>Change&nbsp;the&nbsp;background&nbsp;color.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Parameters:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`color`&nbsp;(str):&nbsp;A&nbsp;string&nbsp;representing&nbsp;the&nbsp;color.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example:&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color&nbsp;=&nbsp;"white"</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-get_font"><strong>get_font</strong></a>(size: int = None, font_path: str = None) -&gt; pygame.font.Font</dt><dd><tt>Gets&nbsp;a&nbsp;font&nbsp;from&nbsp;a&nbsp;provided&nbsp;.ttf&nbsp;file&nbsp;indicated&nbsp;by&nbsp;`font_path`<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Parameters:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`size`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(int):&nbsp;The&nbsp;size&nbsp;of&nbsp;the&nbsp;font<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`font_path`&nbsp;(str):&nbsp;Default&nbsp;is&nbsp;None.&nbsp;The&nbsp;path&nbsp;to&nbsp;a&nbsp;font&nbsp;file&nbsp;if&nbsp;applicable.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>DIRNAME</strong> = r'C:\Users\leofe\2023_CSC\simplepygamemenus-gitrepo\src\.\simplepygamemenus'</td></tr></table>
+</body></html>
