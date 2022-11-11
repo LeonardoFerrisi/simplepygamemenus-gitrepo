@@ -44,7 +44,11 @@ Add buttons using:
 
 I'll add more soon, see the example below!
 
-- Leonardo 
+- Leonardo
+
+### Extra Info:
+
+- PyPI Page: https://pypi.org/project/simplepygamemenus/0.1.0/
 
 
 
