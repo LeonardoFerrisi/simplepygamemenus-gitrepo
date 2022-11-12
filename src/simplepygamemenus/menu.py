@@ -123,6 +123,7 @@ class Menu:
         self.background       = None
         self.background_color = "black"
         self.main             = main
+        self.displaytitle     = displaytitle
 
         if main is not None and useDisplayScreen:
             if not isinstance(main, self.__class__): raise ValueError("Main Menu must be instance of Menu object")
@@ -145,7 +146,7 @@ class Menu:
                 else: background_path=None
                 self.prepSCREEN(screen=None, background_filepath=background_path)
         
-        self.add_text(text=self.title, x=self.center_win_width, y=80, size=30, color=(255,255,255))
+        if self.displaytitle: self.add_text(text=self.title, x=self.center_win_width, y=80, size=30, color=(255,255,255))
                 
     def load_win_dimensions(self, x:int, y:int) -> None:
         """
