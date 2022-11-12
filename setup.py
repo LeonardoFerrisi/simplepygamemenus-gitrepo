@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
   
 setuptools.setup(
     name="simplepygamemenus",
-    version="0.1.1",
+    version="0.1.2",
     author="Leonardo Ferrisi",
     author_email="ferrisil@union.edu",
     packages=find_packages(where='src'),

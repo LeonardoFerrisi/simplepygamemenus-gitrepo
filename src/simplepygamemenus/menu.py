@@ -124,7 +124,10 @@ class Menu:
         self.background_color = "black"
         self.main             = main
         self.displaytitle     = displaytitle
+        self.alternate_escape = None
 
+        # TODO: make showESCKEYhint auto off it alternate_escape has been created 
+        
         if main is not None and useDisplayScreen:
             if not isinstance(main, self.__class__): raise ValueError("Main Menu must be instance of Menu object")
             self.load_win_dimensions(self.main.SCREEN.get_width(),self.main.SCREEN.get_height())
@@ -242,6 +245,13 @@ class Menu:
         if color is None: raise ValueError("Color was None, please provided a string represented color")
         self.background_color = color
 
+    def modify_ESC_behavior(self, function=None):
+        """
+        Modify what ESC does, especially if menu is present
+        """
+        if function is None: raise ValueError("function cannot be None")
+        self.alternate_escape = function
+
     def run_menu(self) -> None:
         """
         Runs the menu as a loop
@@ -262,9 +272,14 @@ class Menu:
                     sys.exit()
                 if event.type==pygame.KEYDOWN:
                     if event.key==pygame.K_ESCAPE:
-                        if self.main is None: 
-                            pygame.quit()
-                            sys.exit()
+                        if self.alternate_escape is not None:
+                            self.alternate_escape()
+                        elif self.main is None: 
+                            if self.alternate_escape is not None:
+                                self.alternate_escape()
+                            else:
+                                pygame.quit()
+                                sys.exit()
                         else:
                             self.main.run_menu()
                 if event.type == pygame.MOUSEBUTTONDOWN:
