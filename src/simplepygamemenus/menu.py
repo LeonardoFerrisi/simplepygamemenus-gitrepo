@@ -305,7 +305,7 @@ class Menu:
         """
         if self.background is not None:
             self.SCREEN.fill(color)
-            self.load_background(use_center=True)
+            self.load_background_coords(use_center=True)
             self.SCREEN.blit(self.background, self.background_coords)
         else:
             self.SCREEN.fill(color)
