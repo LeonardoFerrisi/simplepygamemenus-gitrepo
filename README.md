@@ -54,7 +54,7 @@ I'll add more soon, see the example below!
 
 ### Extra Info:
 
-- PyPI Page: https://pypi.org/project/simplepygamemenus/0.1.0/
+- PyPI Page: https://pypi.org/project/simplepygamemenus/
 
 
 
